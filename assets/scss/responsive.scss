@@ -1,0 +1,55 @@
+// Large devices (desktops, less than 1200px)
+@include media-breakpoint-down(lg) {
+
+}
+
+// Medium devices (tablets, less than 992px)
+@include media-breakpoint-down(md) {
+    section {
+        padding: $basic-md-padding 0;
+        &.padding-top {
+            &-none {
+                padding-top: 0;
+            }
+            &-normal {
+                padding-top: $basic-md-padding / 2;
+            }
+        }
+        &.padding-bottom {
+            &-none {
+                padding-bottom: 0;
+            }
+            &-normal {
+                padding-bottom: $basic-md-padding / 2;
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@include media-breakpoint-down(sm) {
+    section {
+        padding: $basic-sm-padding 0;
+        &.padding-top {
+            &-none {
+                padding-top: 0;
+            }
+            &-normal {
+                padding-top: $basic-sm-padding / 2;
+            }
+        }
+        &.padding-bottom {
+            &-none {
+                padding-bottom: 0;
+            }
+            &-normal {
+                padding-bottom: $basic-sm-padding / 2;
+            }
+        }
+    }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@include media-breakpoint-down(xs) {
+
+}

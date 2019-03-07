@@ -1,0 +1,78 @@
+// Large devices (desktops, less than 1200px)
+@include media-breakpoint-down(lg) {
+}
+// Medium devices (tablets, less than 992px)
+@include media-breakpoint-down(md) {
+    .textimage__section {
+        .row.text_image {
+            display: block;
+            .image_block {
+                .object-fit__container {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+            .text_block {
+                margin: 2rem 0 0 0;
+            }
+        }
+    }
+    .imageblock {
+        .imageblock__wrapper {
+            padding: 3rem;
+        }
+    }
+    .quote {
+        .quote__text {
+            font-size: 3.2rem;
+            &:before {
+                top: -1rem;
+            }
+        }
+    }
+}
+// Small devices (landscape phones, less than 768px)
+@include media-breakpoint-down(sm) {
+    .imageblock {
+        .block {
+            .imageblock__wrapper {
+                margin: 0 0 2rem 0;
+                padding: 3rem;
+            }
+            &:last-child {
+                .imageblock__wrapper {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .quote {
+        .quote__text {
+            font-size: 2.4rem;
+            &:before {
+                font-size: 10rem;
+                top: -1rem;
+            }
+        }
+    }
+    .textcolumn {
+        .textcolumn__wrapper {
+            .column {
+                margin: 0 0 2rem 0;
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .video {
+        .play {
+            height: 6rem;
+            width: 6rem;
+            background-size: 1.8rem;
+        }
+    }
+}
+// Extra small devices (portrait phones, less than 576px)
+@include media-breakpoint-down(xs) {
+}

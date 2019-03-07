@@ -1,0 +1,126 @@
+/* Styling inputs */
+input,
+textarea {
+    &:focus {
+        outline: none;
+    }
+}
+.wpcf7 {
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: .5rem;
+        font-weight: 600;
+        font-size: 1.4rem;
+        width: 100%;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        border: none;
+        border: 2px solid #f1f1f1;
+        background: none;
+        padding: 1.2rem 2rem;
+        margin-bottom: 2rem;
+        transition: .3s all ease-in-out;
+        width: 100%;
+        @include border-radius(0);
+        margin-top: 1rem;
+        width: 100%;
+    }
+    textarea {
+        background: transparent;
+        border: none;
+        border: 2px solid #f1f1f1;
+        background: none;
+        padding: 1.2rem 2rem;
+        max-height: 15rem;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 1rem;
+        transition: .3s all ease-in-out;
+    }
+    input[type="submit"] {
+        border: none;
+        background-color: $dark;
+        color: #FFF;
+        padding: 1.2rem 2rem;
+        border-radius: 0;
+        font-size:2rem;
+        font-weight:600;
+        text-transform: uppercase;
+        margin-top: 3rem;
+        &:hover {
+
+        }
+    }
+}
+
+/* Standard errors & messages */
+.wpcf7-form {
+    position: relative;
+}
+span.wpcf7-not-valid-tip {
+    display: block !important; // Tooltip errors
+}
+div.wpcf7-validation-errors {
+    display: none !important; // Validation errors
+}
+.wpcf7-form-control-wrap {
+    position: relative;
+}
+.wpcf7-not-valid {
+    border-color: #E75429 !important;
+    color: #E75429 !important;
+}
+span.wpcf7-not-valid-tip {
+    font-size: 1.2rem;
+    position: absolute;
+    display: table;
+    z-index: 999;
+    background-color: $dark;
+    color: #fff;
+    text-align: center;
+    padding: .25rem 2rem;
+    font-weight: 600;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid $dark;
+        top: -3px;
+        left: 50%;
+        position: absolute;
+    }
+}
+#send-form {
+    
+}
+div.wpcf7 .ajax-loader {
+    background-image: none;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100% !important;
+    height: 100% !important;
+    .loading {
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        border: .2em solid $dark;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        animation: .9s loader linear infinite;
+        position: absolute;  
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}

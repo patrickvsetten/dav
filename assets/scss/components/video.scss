@@ -1,0 +1,80 @@
+.video {
+    .youtube {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background-color: #000;
+        cursor: pointer;
+        background: center center/cover no-repeat #ccc;
+        clear: both;
+        z-index: 9;
+		&:hover{
+            .video__text {
+                transform: scale(1.1);
+            }
+		}
+        iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+    }
+    &__placeholder {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: auto;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+		z-index:1;
+    }
+    &__text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        transition: $transition-primary;
+    }
+    .play {
+        height:12rem;
+        width:12rem;
+		position:relative;
+        background-color: $color-primary;
+        color:transparent !important;
+		margin:0 auto !important;
+        font-size:.1rem !important;
+		line-height:0 !important;
+		transform-style: preserve-3d;
+		background-image:url(../img/play.svg);
+		background-position:center center;
+		background-repeat:no-repeat;
+		display:block !important;
+        background-size: 3rem;
+    }
+}
+.video {
+    .video-upload_wrapper {
+        position: relative;
+		overflow:hidden;
+        .video-tag {
+            width: 100%;
+			display:block;
+        }
+    }
+}

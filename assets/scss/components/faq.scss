@@ -1,0 +1,94 @@
+// Accordion
+.faq__section {
+    background-color: $light-grey;
+    .accordion  {
+        background-color: white;
+        width: 100%;
+        padding: 2rem 2rem 2rem 2rem;
+        margin-bottom: 1.5rem;
+        transition: $transition-primary;
+		&:hover{
+			border-color: $color-primary;
+		}
+		&:active, &:focus{
+			text-decoration: none;
+		}
+        &.active {
+
+        }
+        .title {
+            display: flex;
+            width: 100%;
+            position: relative;
+            a {
+                font-size: 2.2rem;
+                font-weight: 500;
+                display:table;
+                width: 100%;
+                position: relative;
+                color: black;
+                transition: $transition-primary;
+                &.open {
+                    .toggle_icon {
+						&:before{
+							content:'-';
+                            font-size: 2.4rem;
+						}
+                    }
+                }
+                .text {
+                    display: inline-flex;
+                    padding-right: 3rem;
+                    pointer-events: none;
+					.question_text{
+						display: inline-block;
+					}
+                }
+            }
+            .toggle_icon{
+                line-height: 1.6;
+                width: 3rem;
+				&:before{
+					content: '+';
+                    font-size: 2.4rem;
+                    transition: $transition-secondary;
+				}
+            }
+        }
+        .content {
+            display: none;
+            opacity: 0;
+            transition: .9s opacity ease-in-out;
+            p {
+                margin: 2rem 0 0 0;
+            }
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+	.faq_wrapper {
+		display: block;
+        width: 100%;
+		.faq__section__wrapper {
+			display: block;
+			margin-bottom: 5rem;
+			position: relative;
+			h3 {
+                font-size: 2.2rem;
+			}
+			.questions {
+                width: 100%;
+				.accordion:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+    .padding-small {
+        padding: 7rem 0;
+    }
+}

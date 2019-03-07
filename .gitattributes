@@ -1,0 +1,9 @@
+* text=auto
+*.css linguist-vendored
+*.scss linguist-vendored
+assets/dist/bundle.js linguist-vendored
+
+*.css -diff
+*.css merge=ours
+assets/dist/bundle.js -diff
+assets/dist/bundle.js merge=ours

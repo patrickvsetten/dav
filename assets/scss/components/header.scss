@@ -1,0 +1,58 @@
+.header {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    min-height: 60rem;
+    &__titles {
+        text-align: center;
+        h1,
+        h2,
+        h3 {
+            color: #FFF;
+        }
+    }
+    &__searchbar {
+        margin-top: 5rem;
+    }
+    &__search-tabs {
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__search-tab {
+        font-size: 1.6rem;
+        font-family: $font-primary;
+        font-weight: 700;
+        color: #FFF;
+        background-color: rgba(0,0,0,.1);
+        height: 5.5rem;
+        width: 25rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: .7rem .7rem 0 0;
+        .icon {
+            fill: #FFF;
+            margin-right: 1rem;
+        }
+        &--active {
+            background-color: #FFF;
+            color: $dark;
+            .icon {
+                fill: $orange;
+            }
+        }
+    }
+    &__search-wrapper {
+        background-color: #FFF;
+        border-radius: 0 .7rem .7rem .7rem;
+        padding: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__search-input {
+        color: $color-title;
+        font-size: 1.2rem;
+    }
+}

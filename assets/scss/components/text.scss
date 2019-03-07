@@ -1,0 +1,50 @@
+// One column
+.textcolumn {
+	.row {
+		display: flex;
+		justify-content: center;
+		&.align-center {
+			text-align: center;
+		}
+		&.align-left {
+			text-align: left;
+		}
+	}
+	.text-title {
+		display: inline-block;
+		position: relative;
+	}
+	.button {
+		display: inline-block;
+	}
+	&__wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+        flex-flow: wrap;
+        h1 {
+            font-size: 3.6rem;
+            &.margin-medium {
+                margin-bottom: 3rem;
+            }
+            &.margin-small {
+                margin-bottom: 3rem;
+            }
+        }
+        p {
+            font-size: 1.8rem;
+        }
+	}
+	.button_wrapper {
+		width: 100%;
+	}
+	&__image {
+		height: 25rem;
+	    background-size: cover;
+	    background-position: center center;
+		margin-bottom: 1rem;
+	}
+	.svg path {
+		fill: $color-primary;
+	}
+}
