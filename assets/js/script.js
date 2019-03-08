@@ -8,6 +8,11 @@ jQuery(function($) {
         $('.navbar__hamburger-bar').toggleClass('navbar__hamburger-bar--animate');
     })
 
+    $('.header__search-tab').on('click', function() {
+        $('.header__search-tab--active').removeClass('header__search-tab--active');
+        $(this).addClass("header__search-tab--active");
+    });
+
     // CF7 loader fix
     $('.ajax-loader').append('<div class="loading"></div>');
 
@@ -70,5 +75,47 @@ jQuery(function($) {
             e.preventDefault();
         });
     };
+
+    // Flickity
+    $('.partners__carousel').flickity({
+        watchCSS: false,
+        groupCells: 5,
+        cellAlign: 'center',
+        contain: true,
+        pageDots: false,
+        prevNextButtons: false,
+        autoPlay: 6000,
+        wrapAround: true,
+    });
+
+    if ($(window).width() < 767) {
+        $('.partners__carousel').flickity({
+            watchCSS: false,
+            groupCells: 2,
+            cellAlign: 'left',
+            contain: true,
+            pageDots: false,
+            prevNextButtons: false,
+            autoPlay: 6000,
+            wrapAround: true,
+        });
+    }
+
+    // DATEPICKER
+    $('input.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+        weekStart: 1,
+        language: 'nl-NL',
+        todayHighlight: true,
+    });
+
+    // iOS bugfix!
+    $(document).on('touchstart', function(e) {
+        var ele = $(e.target);
+        if (!ele.hasClass('ui-datepicker-next')&&!ele.hasClass('ui-datepicker-prev')&&!ele.hasClass("hasDatepicker") && !ele.hasClass("ui-datepicker") && !ele.hasClass("ui-icon") && $(ele).closest(".ui-datepicker").length == 0){
+            $(".hasDatepicker").datepicker("hide");
+            $('input').blur();
+        }
+    });
 
 });

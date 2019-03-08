@@ -1,0 +1,38 @@
+.partners {
+    .content__wrapper {
+        text-align: center;
+        margin: 0 0 5rem;
+    }
+    &__logo {
+        width: 20%;
+        display: inline-block;
+    }
+    &__carousel {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .carousel-cell {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            &--image {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 8rem;
+                width: 60%;
+                display: block;
+                margin: 0 auto;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+                transition: $transition-secondary;
+                opacity: .6;
+                &:hover {
+                    -webkit-filter: grayscale(0%);
+                    filter: grayscale(0%);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

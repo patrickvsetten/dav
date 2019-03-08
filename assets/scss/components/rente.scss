@@ -1,0 +1,36 @@
+.rente {
+    dl {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+        flex-wrap: wrap;
+        dt {
+            float: left;
+            clear: left;
+            padding: 1rem 2rem;
+            width: 50%;
+            border-top: 1px solid rgba(0,0,0,.1);
+            &:first-child, &:nth-child(2) {
+                border: none;
+                background-color: black;
+                padding: 1rem 2rem;
+                color: white;
+                font-weight: bold;
+            }
+        }
+        dd {
+            float: left;
+            padding: 1rem 2rem;
+            width: 50%;
+            border-top: 1px solid rgba(0,0,0,.1);
+            margin: 0;
+            &:first-child, &:nth-child(2) {
+                border: none;
+                background-color: black;
+                padding: 1rem 2rem;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}

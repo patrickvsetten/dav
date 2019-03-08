@@ -1,0 +1,174 @@
+/* Tabnav */
+@keyframes forward {
+    0% {
+        transform:translateX(0);
+    }
+    50% {
+        transform:translateX(.5rem);
+    }
+    100% {
+        transform:translateX(0);
+    }
+}
+.tabnav, .blog {
+    padding: 0;
+    white-space: nowrap;
+    &__text {
+        white-space: normal;
+        p {
+            max-width: 80rem;
+            margin-bottom: 5rem;
+        }
+    }
+    .wrapper {
+        padding: 5rem;
+        position: relative;
+    }
+    &__tabs {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        width: 33.333%;
+        display: inline-block;
+        white-space: normal;
+    }
+    &__tab {
+        background: #F7F7F4;
+        position: relative;
+        padding: 3rem;
+        transition: .3s all ease-in-out;
+        font-size: 2.4rem;
+        font-weight: 600;
+        width: 100%;
+        display: block;
+        cursor: pointer;
+        border-bottom: 2px solid #FFF;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:hover {
+            .icon {
+                transform: translateX(1rem);
+            }
+        }
+        .icon {
+            transition: .3s all ease-in-out;
+        }
+        &:last-child {
+            border: none;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background-color: $color-primary;
+            transition: width .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        &--active {
+            &:before {
+                width: 6px;
+            }
+            .icon {
+                transform: translateX(1rem);
+            }
+        }
+    }
+    &__panels {
+        height: 100% !important;
+        background: #FFF;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        width: 66.666%;
+        transition: opacity .6s ease-in-out;
+        white-space: normal;
+    }
+    &__panel {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-position: center center;
+        background-size: cover;
+        pointer-events: none;
+        transition: opacity .6s ease-in-out;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+            z-index: 0;
+            opacity: .6;
+        }
+        &--active {
+            opacity: 1;
+            z-index: 1;
+            pointer-events: all;
+        }
+        &--overview {
+            .tabnav__wrapper {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        &:hover {
+            .tabnav__icon {
+                background-color: #FFF;
+                svg {
+                    fill: $color-primary;
+                    animation: forward 1s infinite;
+                }
+            }
+        }
+    }
+    &__content-wrapper {
+        position: absolute;
+        left: 4rem;
+        bottom: 4rem;
+        right: 4rem;
+        color: #FFF;
+        z-index: 1;
+        h3 {
+            color: #FFF;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+    &__description {
+        display: flex;
+        align-items: center;
+    }
+    &__content {
+        width: calc(100% - 8.4rem);
+        display: inline-block;
+        margin-right: 4rem;
+    }
+    &__icon {
+        width: 4.4rem;
+        height: 4.4rem;
+        border: 2px solid #FFF;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-secondary;
+        svg {
+            fill: #FFF;
+            transition: $transition-secondary;
+        }
+    }
+}

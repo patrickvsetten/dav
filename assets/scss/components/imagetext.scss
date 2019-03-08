@@ -1,0 +1,29 @@
+// Text in image
+.imagetext {
+	background-size: cover;
+	background-position: center center;
+	padding: 15rem 0;
+	h1,
+	h2,
+	h3 {
+		color: #FFF;
+		font-size: 3.2rem;
+	}
+	p {
+		color: #FFF;
+	}
+	.subtitle {
+		color: #FFF;
+		font-weight: 600;
+		font-size: 2.2rem;
+		margin-bottom: 1.5rem;
+	}
+	.row {
+		&.left{
+			justify-content: flex-start;
+		}
+		&.right {
+			justify-content: flex-end;
+		}
+	}
+}

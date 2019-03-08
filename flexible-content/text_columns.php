@@ -14,7 +14,7 @@ $cols = [
 ];
 ?>
 
-<section class="textcolumn padding-top--<?= $space_up; ?> padding-bottom--<?= $space_down; ?>">
+<section class="textcolumn padding-top--<?= $space_up; ?> padding-bottom--<?= $space_down; ?>" data-aos="fade">
 	<div class="container">
 		<div class="row align-<?= $alignment; ?>">
 			<div class="textcolumn__wrapper">
@@ -33,16 +33,16 @@ $cols = [
 							if( in_array('image', $input) && have_rows('image_group') ):
 								while( have_rows('image_group') ): the_row();
 
-									if( get_sub_field('image_or_icon') == 'image' ): 
+									if( get_sub_field('image_or_icon') == 'image' ):
 										?>
 										<div class="textcolumn__image" style="background-image:url('<?php the_sub_field('image');?>');"></div>
-										<?php 
-									endif; 
-									
-									if( get_sub_field('image_or_icon') == 'icon' ): 
+										<?php
+									endif;
+
+									if( get_sub_field('image_or_icon') == 'icon' ):
 										?>
 										<img class="svg" src="<?php the_sub_field('icon');?>">
-										<?php 
+										<?php
 									endif;
 
 								endwhile;
@@ -74,7 +74,7 @@ $cols = [
 									$link = get_sub_field('button');
 									if( $link ):
 										?>
-										<a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="button button--<?php the_sub_field('button_type');?>"><?= $link['title']; ?></a>
+										<a href="<?= $link['url']; ?>" data-text="<?= $link['title']; ?>" target="<?= $link['target']; ?>" class="button button--icon button--<?php the_sub_field('button_type');?>"><span><?= $link['title']; ?></span><svg class="icon"><use xlink:href="#icon-cross"/></svg></a>
 										<?php
 									endif;
 

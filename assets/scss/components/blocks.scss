@@ -1,0 +1,103 @@
+.blocks {
+    h1,
+    h2,
+    h3 {
+        font-size: 3rem;
+        position: relative;
+    }
+    &__block {
+        display: flex;
+    }
+    &__image-wrapper {
+        border-radius: .7rem;
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+    &__wrapper {
+        border-radius: .7rem;
+        background-color: #FFF;
+        padding: 5rem;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 8rem;
+        &--links {
+            padding: 5rem;
+            h1,
+            h2,
+            h3 {
+                font-size: 3.2rem;
+                position: relative;
+            }
+            .blocks__link {
+                display: block;
+                margin: 1rem 0;
+                font-weight: 600;
+                &:hover {
+                    color: $color-secondary;
+                    .icon {
+                        animation: forward 1s infinite;
+                    }
+                }
+                .icon {
+                    fill: $color-secondary;
+                    margin-right: 1rem;
+                    transition: $transition-secondary;
+                }
+            }
+        }
+        &--image {
+            padding: 0;
+            background-color: #FFF;
+            transform: translate3d(0,0,0);
+            min-height: 55rem;
+            transition: transform .3s cubic-bezier(.3,0,.07,1);
+            &:hover {
+                transform: translate3d(0,-.5rem,0);
+                &:after {
+                    box-shadow: 0 42px 94px 0 rgba(0,0,0,0.6);
+                }
+            }
+            .blocks__heading {
+                position: absolute;
+                bottom: 5rem;
+                left: 5rem;
+                right: 5rem;
+                text-align: center;
+                h1,
+                h2,
+                h3 {
+                    font-size: 2.4rem;
+                    color: #FFF;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &--content {
+            padding: 5rem;
+            h1,
+            h2,
+            h3 {
+                font-size: 3.2rem;
+                position: relative;
+            }
+        }
+        &--blue {
+            background-color: $color-secondary;
+            h1,
+            h2,
+            h3,
+            p {
+                color: #FFF;
+            }
+        }
+    }
+}

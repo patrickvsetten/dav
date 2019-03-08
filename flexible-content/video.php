@@ -5,7 +5,7 @@ $space_up = get_sub_field('space_up');
 $space_down = get_sub_field('space_down');
 ?>
 
-<section class="video padding-top--<?= $space_up; ?> padding-bottom--<?= $space_down; ?>">
+<section class="video padding-top--<?= $space_up; ?> padding-bottom--<?= $space_down; ?>" data-aos="fade">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-12">

@@ -1,14 +1,40 @@
 // Accordion
-.faq__section {
-    background-color: $light-grey;
+.faq__section, .links__mobile {
     .accordion  {
         background-color: white;
         width: 100%;
-        padding: 2rem 2rem 2rem 2rem;
-        margin-bottom: 1.5rem;
+        padding: 1.5rem 0;
+        margin-bottom: 2.5rem;
         transition: $transition-primary;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: $color-primary;
+            opacity: .1;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: $color-primary;
+            opacity: 1;
+            z-index: 2;
+            width: 0;
+            transition: width .6s cubic-bezier(.4,.6,.2,1);
+        }
 		&:hover{
 			border-color: $color-primary;
+            &:before {
+                width: 100%;
+            }
 		}
 		&:active, &:focus{
 			text-decoration: none;
@@ -20,19 +46,30 @@
             display: flex;
             width: 100%;
             position: relative;
+            &:hover {
+                .toggle_icon {
+                    background-color: $color-primary;
+                    &:before {
+                        color: #FFF;
+                    }
+                }
+            }
             a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 font-size: 2.2rem;
                 font-weight: 500;
-                display:table;
                 width: 100%;
                 position: relative;
                 color: black;
+                cursor: pointer;
                 transition: $transition-primary;
                 &.open {
                     .toggle_icon {
 						&:before{
 							content:'-';
-                            font-size: 2.4rem;
+                            font-size: 2.8rem;
 						}
                     }
                 }
@@ -45,12 +82,21 @@
 					}
                 }
             }
-            .toggle_icon{
-                line-height: 1.6;
-                width: 3rem;
+            .toggle_icon {
+                width: 3.2rem;
+                height: 3.2rem;
+                float: right;
+                border: 2px solid $color-primary;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: $transition-secondary;
+                pointer-events: none;
 				&:before{
 					content: '+';
-                    font-size: 2.4rem;
+                    font-size: 2.8rem;
+                    line-height: 1.1;
                     transition: $transition-secondary;
 				}
             }

@@ -1,0 +1,107 @@
+/* Datepicker */
+#ui-datepicker-div {
+    &.ui-widget-content {
+        border: none;
+        box-shadow: 0rem .5rem 1rem 0rem rgba(0,0,0,0.08);
+        border-radius: .7rem;
+        background: white;
+        padding: 2rem;
+    }
+    .ui-widget-header {
+        border: none;
+        background: transparent;
+    }
+    .ui-datepicker-calendar {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    &.ui-widget {
+        font-size: 1.6rem;
+        font-family:$font-primary;
+    }
+    .ui-datepicker .ui-datepicker-header {
+        padding: 0;
+    }
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+        border: none;
+        background: $light;
+        color:$dark;
+    }
+    .ui-datepicker .ui-datepicker-title {
+        font-size: 1.4rem;
+    }
+}
+.ui-datepicker td span, .ui-datepicker td a {
+    text-align: center;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ut-datepicker .ui-datepicker-prev-hover {
+    background-image: none;
+    top: 0!important;
+    left: 0!important;
+}
+.ui-datepicker .ui-datepicker-next span,
+.ut-datepicker .ui-datepicker-next-hover {
+    background-image: none;
+    top: 0!important;
+    right: 0 !important;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    top: 0;
+}
+.ui-datepicker td .ui-state-hover {
+    padding: .2em !important;
+    background-color: $color-secondary !important;
+    color: white!important;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    border: none;
+    background:none;
+    padding: 0;
+    margin: 0;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 2px;
+    width: 2rem;
+    height: 3rem;
+    text-align: center;
+}
+.ui-datepicker-next {
+    top: 0!important;
+    right: 0!important;
+    &:after {
+        content: '';
+        display: block;
+        background-image:url('../img/icon-arrow-right.svg');
+        width: .8rem;
+        height: .8rem;
+        background-size: contain;
+        background-position: center center;
+        transform: translateY(1.2rem);
+    }
+    &:hover {
+        &:after {
+            color: $orange;
+        }
+    }
+}
+.ui-datepicker-prev {
+    top: 0!important;
+    left: 0!important;
+    &:after {
+        content: '';
+        display: block;
+        background-image:url('../img/icon-arrow-left.svg');
+        width: .8rem;
+        height: .8rem;
+        background-size: contain;
+        background-position: center center;
+        transform: translateY(1.2rem);
+    }
+    &:hover {
+        &:after {
+            color: $color-primary;
+        }
+    }
+}

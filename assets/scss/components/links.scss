@@ -1,0 +1,44 @@
+.links {
+    background-color: $color-secondary;
+    h2 {
+        font-size: 3rem;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+        &:last-child {
+            margin-bottom: .5rem;
+        }
+    }
+    &__word-link {
+        position: relative;
+        font-size: 2rem;
+        margin-left: 1.5rem;
+        &:hover {
+            &:before {
+                width: 100%;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -.5rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: rgba(0,0,0,.1);
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -.5rem;
+            left: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: $color-primary;
+            transition: width .6s cubic-bezier(.4,.6,.2,1);
+        }
+    }
+}

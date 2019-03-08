@@ -1,0 +1,50 @@
+// One column
+.textsidebar {
+	&--contact {
+		.textsidebar__sidebar {
+			background-color: $color-primary;
+			color: #FFF;
+			h1,
+			h2,
+			h3,
+			h4 {
+				color: #FFF;
+			}
+			p {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	&__links {
+		img {
+			display: inline-block;
+			margin-right: 2rem;
+			width: 2rem; 
+		}
+		a {
+			display: flex;
+			align-items: center;
+			color: #FFF;
+			text-decoration: underline;
+			margin: 1rem 0;
+		}
+	}
+	&__intro {
+		font-size: 2rem;
+		font-weight: 600;
+		display: block;
+		margin-bottom: 3rem;
+	}
+	&__sidebar {
+		background-color: $color-secondary;
+		padding: 4rem;
+		-webkit-clip-path: polygon(0 0, 94% 0, 100% 8%, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 94% 0, 100% 8%, 100% 100%, 0 100%);
+		h1,
+		h2,
+		h3,
+		h4 {
+			font-size: 3rem;
+		}
+	}
+}

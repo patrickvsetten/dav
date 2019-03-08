@@ -1,33 +1,58 @@
 // Text in image
-.textimage__section{
+.textimage__section {
 	.row {
-		&.text_image{
+		&.text_image {
 			flex-direction:row-reverse;
+			align-items: center;
+			.block_wrapper {
+				padding-right: 5rem;
+			}
 		}
 		&.image_text {
+			align-items: center;
             .text_block {
                 justify-content: flex-end;
             }
-		}
-		.blocks_wrapper{
-			display:flex;
-	        .text_block {
-	            display: flex;
-	            align-items: center;
-	        }
-			.block_wrapper{
-				.text_wrapper{
-					max-width: 45rem;
-	                padding: 13rem 0;
-				}
-				.button{
-					display: inline-block;
-					margin-top: 2rem;
-				}
+			.block_wrapper  {
+				padding-left: 5rem;
 			}
 		}
-		.object-fit__container{
+        .text_block {
+            display: flex;
+            align-items: center;
+        }
+		.block_wrapper {
+			.text_wrapper {
+				max-width: 40rem;
+                padding: 13rem 0;
+			}
+			.button{
+				display: inline-block;
+				margin-top: 2rem;
+			}
+		}
+		.object-fit__container {
 	        height: 100%;
+			.image {
+				width: 100%;
+				object-fit: cover;
+				height: 55rem;
+			}
+		}
+	}
+}
+
+// SCSS IE
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+	.textimage__section {
+		.row {
+			&.text_image,
+			&.image_text {
+				align-items: inherit;
+				.object-fit__container {
+					min-height: 35rem;
+				}
+			}
 		}
 	}
 }

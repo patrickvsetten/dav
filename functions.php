@@ -3,14 +3,16 @@ require_once(__DIR__ . '/includes/autoload.php');
 
 function add_css() {
     global $wp_scripts;
+    wp_enqueue_style('jquery-ui-css');
     wp_enqueue_style( 'global', get_template_directory_uri() . '/assets/dist/global.min.css' );
+    wp_enqueue_style( 'datepicker', get_template_directory_uri() . '/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'add_css' );
 
 function footer_enqueue() {
     wp_enqueue_script('zz-lazyload', get_template_directory_uri(). '/assets/libs/lazyload.js', array( 'jquery'));
     wp_localize_script('zz-lazyload', 'zzlazyload_params', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ));
-    wp_enqueue_script('script', get_template_directory_uri(). '/assets/dist/scripts.min.js', array( 'jquery'));
+    wp_enqueue_script('script', get_template_directory_uri(). '/assets/dist/scripts.min.js', array( 'jquery', 'jquery-ui-datepicker'));
 }
 add_action('wp_footer', 'footer_enqueue');
 
