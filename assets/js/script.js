@@ -8,10 +8,9 @@ jQuery(function($) {
         $('.navbar__hamburger-bar').toggleClass('navbar__hamburger-bar--animate');
     })
 
-    $('.header__search-tab').on('click', function() {
-        $('.header__search-tab--active').removeClass('header__search-tab--active');
-        $(this).addClass("header__search-tab--active");
-    });
+
+
+
 
     // CF7 loader fix
     $('.ajax-loader').append('<div class="loading"></div>');

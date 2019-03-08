@@ -23,6 +23,15 @@
     &__search-tabs {
         display: flex;
         justify-content: flex-start;
+        .active {
+            .header__search-tab {
+                background-color: #FFF;
+                color: $dark;
+                .icon {
+                    fill: $orange;
+                }
+            }
+        }
     }
     &__search-tab {
         font-size: 1.6rem;
@@ -41,21 +50,17 @@
             fill: #FFF;
             margin-right: 1rem;
         }
-        &--active {
-            background-color: #FFF;
-            color: $dark;
-            .icon {
-                fill: $orange;
-            }
-        }
     }
     &__search-wrapper {
         background-color: #FFF;
         border-radius: 0 .7rem .7rem .7rem;
         padding: 3.5rem 3.5rem 2.5rem 3.5rem;
-        display: flex;
         justify-content: space-between;
         align-items: center;
+        display: none;
+        &.active {
+            display: flex;
+        }
     }
     &__input-wrapper {
         color: $color-text;
@@ -83,12 +88,22 @@
             border: none;
             padding: 0;
             margin: 0;
+            margin-top: .5rem;
             background-color: transparent;
             cursor: pointer;
             font-size: 1.4rem;
             font-family: $font-primary;
             font-weight: 700;
             color: $dark;
+            &::-webkit-input-placeholder {
+                color: $dark;
+            }
+            &:-ms-input-placeholder {
+                color: $dark;
+            }
+            &::placeholder {
+                color: $dark;
+            }
         }
     }
 }
