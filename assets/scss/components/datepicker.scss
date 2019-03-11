@@ -1,10 +1,23 @@
 /* Datepicker */
 #ui-datepicker-div {
+    &:after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 50px;
+        border-width: 0 10px 10px;
+        border-style: solid;
+        display: block;
+        width: 0;
+        bottom: auto;
+        border-color: #FFF transparent;
+    }
     &.ui-widget-content {
         border: none;
-        box-shadow: 0rem .5rem 1rem 0rem rgba(0,0,0,0.08);
+        box-shadow: 0rem 0 3.4rem 0rem rgba(0,0,0,0.1);
         border-radius: .7rem;
         background: white;
+        margin-top: 1.8rem;
         padding: 2rem;
     }
     .ui-widget-header {
@@ -30,6 +43,11 @@
     .ui-datepicker .ui-datepicker-title {
         font-size: 1.4rem;
     }
+}
+.ui-state-default, .ui-widget-content .ui-state-default {
+    font-family:$font-secondary;
+    font-size: 1rem;
+    font-weight: 600;
 }
 .ui-datepicker td span, .ui-datepicker td a {
     text-align: center;

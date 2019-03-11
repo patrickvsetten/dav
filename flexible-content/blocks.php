@@ -57,6 +57,9 @@ $cols = [
 								<div class="<?= $cols[$num_rows]; ?> blocks__block" data-aos="fade" data-aos-delay="<?php echo $i;?>00">
 									<div class="blocks__wrapper blocks__wrapper--<?php the_sub_field('block_type'); ?> shadow">
 										<div class="blocks__image-wrapper" style="background-image:url(<?= $image; ?>)">
+											<?php if(get_sub_field('block_action')): ?>
+											<div class="blocks__action"><?php the_sub_field('block_action'); ?></div>
+											<?php endif; ?>
 											<?php
 												if( $link ):
 													?>
